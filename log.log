@@ -1,9 +1,0 @@
-2022-11-17 18:03:19,870 - INFO - info
-2022-11-17 18:03:19,870 - WARNING - warning
-2022-11-17 18:03:19,870 - ERROR - error
-2022-11-17 18:03:19,871 - CRITICAL - cricital
-2022-11-17 18:03:19,887 - WARNING - PyNaCl is not installed, voice will NOT be supported
-2022-11-17 18:03:19,889 - INFO - logging in using static token
-2022-11-17 18:03:20,782 - INFO - Shard ID None has sent the IDENTIFY payload.
-2022-11-17 18:03:21,119 - INFO - Shard ID None has connected to Gateway: ["gateway-prd-us-east1-d-skmn",{"micros":171323,"calls":["id_created",{"micros":1663,"calls":[]},"session_lookup_time",{"micros":2174,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-blue-prd-2-159",{"micros":166324,"calls":["start_session",{"micros":64418,"calls":["discord-api-bdd4c75d6-gvkfd",{"micros":57328,"calls":["get_user",{"micros":15010},"get_guilds",{"micros":3742},"send_scheduled_deletion_message",{"micros":12},"guild_join_requests",{"micros":701},"authorized_ip_coro",{"micros":11}]}]},"starting_guild_connect",{"micros":59,"calls":[]},"presence_started",{"micros":24349,"calls":[]},"guilds_started",{"micros":192,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":77279,"calls":[]},"connect_finished",{"micros":77283,"calls":[]},"build_ready",{"micros":20,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]},"clean_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 073a7c03b1b8d4b02fb14c68b66dc559).
-2022-11-17 18:03:23,166 - INFO - ready.

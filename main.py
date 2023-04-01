@@ -1,18 +1,24 @@
 import discord
 from discord.ext import commands
-import utils
-from logging import *
+import logging
 import os
 import random
 
-basicConfig(level=INFO, filename="log.log", filemode="w",
+import utils
+from cloudlabs import *
+from waifu_chat import *
+from ai_chat import *
+from translate import *
+from presence import *
+
+logging.basicConfig(level=logging.INFO, filename="log.log", filemode="w",
             format="%(asctime)s - %(levelname)s - %(message)s")
 
-debug("debug")
-info("info")
-warning("warning")
-error("error")
-critical("cricital")
+logging.debug("debug")
+logging.info("info")
+logging.warning("warning")
+logging.error("error")
+logging.critical("cricital")
 
 
 Ayabot = commands.Bot(command_prefix='*', intents=utils.intents)
@@ -20,7 +26,7 @@ Ayabot = commands.Bot(command_prefix='*', intents=utils.intents)
 
 @Ayabot.event
 async def on_ready():
-    info('ready.')
+    logging.info('ready.')
 
 
 @Ayabot.event
@@ -28,9 +34,9 @@ async def on_message(message):
     with open('blacklist.txt', 'r') as blacklist:
         for blackword in blacklist:
             if blackword.strip() in message.content:
-                await message.delete()
-                await message.channel.send(f"Don't swear boomer. {message.author.mention}")
-                await message.delete()
+                if message.author.name != 'Ayabot' and message.author.name !='Ömer Aslan':
+                    await message.delete()
+                    await message.channel.send(f"Don't swear boomer. {message.author.mention}")
     await Ayabot.process_commands(message)
 
 
@@ -89,5 +95,21 @@ async def unban(ctx, *, member):
 async def raffle(ctx):
     lucky_boomer = random.choice(ctx.guild.members)
     await ctx.channel.send(f"{lucky_boomer.mention} won the raffle!")
+
+@Ayabot.command()
+async def speech(ctx, *, msg):
+    await ctx.channel.send(text_to_speech(msg))
+
+@Ayabot.command()
+async def waifu(ctx, *, msg):
+    await ctx.channel.send(waifu_chat(msg))
+
+@Ayabot.command()
+async def waifu_clear(ctx):
+    await ctx.channel.send(waifu_clear())
+
+@Ayabot.command()
+async def ai(ctx, *, msg):
+    await ctx.channel.send(chat_with_ai(msg))
 
 Ayabot.run(utils.token)
