@@ -30,7 +30,7 @@ def waifu_delete():
     url = "https://waifu.p.rapidapi.com/v1/user/dialog/sample_user_id"
 
     headers = {
-	    "X-RapidAPI-Key": "20f573414amsh9541b83d962a293p196bb2jsn71986416f433",
+	    "X-RapidAPI-Key": "Your-RapidAPI-Key",
 	    "X-RapidAPI-Host": "waifu.p.rapidapi.com"
     }
 
