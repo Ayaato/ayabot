@@ -9,7 +9,6 @@ from cloudlabs import *
 from waifu_chat import *
 from ai_chat import *
 from translate import *
-from presence import *
 
 logging.basicConfig(level=logging.INFO, filename="log.log", filemode="w",
             format="%(asctime)s - %(levelname)s - %(message)s")
