@@ -1,4 +1,5 @@
 import requests
+import key_RapidApi as key
 
 def chat_with_ai(message):
 
@@ -9,10 +10,15 @@ def chat_with_ai(message):
         "uid":"user1"}
 
     headers = {
-        "X-RapidAPI-Key": "Your-RapidAPI-Key",
+        "X-RapidAPI-Key": f"{key.key}",
         "X-RapidAPI-Host": "ai-chatbot.p.rapidapi.com"
     }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
 
-    return response.text
+    response = response.json()['chatbot']['response']
+
+    if (response == 'Internal Server'):
+        return "Lütfen Türkçe karakter kullanmadan deneyin."
+    
+    return response

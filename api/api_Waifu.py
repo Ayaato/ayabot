@@ -1,5 +1,5 @@
 import requests
-from translate import *
+import key_RapidApi as key
 
 def waifu_chat(message):
 
@@ -8,9 +8,9 @@ def waifu_chat(message):
     querystring = {
         "user_id":"sample_user_id",
         "message":f"{message}",
-        "from_name":"You",
+        "from_name":"Ömer",
         "to_name":"Girl",
-        "situation":"Girl loves You.",
+        "situation":"Girl loves Ömer.",
         "translate_from":"auto",
         "translate_to":"auto"
         }
@@ -18,22 +18,10 @@ def waifu_chat(message):
     payload = {}
     headers = {
         "content-type": "application/json",
-        "X-RapidAPI-Key": "Your-RapidAPI-Key",
+        "X-RapidAPI-Key": f"{key.key}",
         "X-RapidAPI-Host": "waifu.p.rapidapi.com"
     }
 
     response = requests.request("POST", url, json=payload, headers=headers, params=querystring)
-
-    return response.text
-
-def waifu_delete():
-    url = "https://waifu.p.rapidapi.com/v1/user/dialog/sample_user_id"
-
-    headers = {
-	    "X-RapidAPI-Key": "Your-RapidAPI-Key",
-	    "X-RapidAPI-Host": "waifu.p.rapidapi.com"
-    }
-
-    response = requests.request("DELETE", url, headers=headers)
 
     return response.text

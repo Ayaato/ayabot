@@ -1,4 +1,4 @@
-token = 'botToken'
+token = 'TokenOfYourDiscordBot'
 
 import discord
 intents = discord.Intents(messages=True, guilds=True,
